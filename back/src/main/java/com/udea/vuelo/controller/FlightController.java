@@ -26,5 +26,9 @@ public class FlightController {
                 LocalDate end = LocalDate.parse(endDate);
                 return flightService.searchFlights(start, end);
     }
+    @GetMapping("/searchByName")
+    public List<List<Flight>> searchFlightsByName(@RequestParam(name = "nombreAerolinea") String nombreAerolinea) {
 
+        return flightService.searchFlightsByName(nombreAerolinea);
+    }
 }

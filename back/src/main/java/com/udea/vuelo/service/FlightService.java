@@ -34,6 +34,24 @@ public class FlightService {
         }
 
     }
+    public List<List<Flight>> searchFlightsByName(String nombreAerolinea) {
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            InputStream fileStream = getClass().getClassLoader().getResourceAsStream(filePath);
+            if (fileStream != null) {
+                Flight[] flights = objectMapper.readValue(fileStream, Flight[].class);
+                return Arrays.asList(Arrays.stream(flights)
+                        .filter(flight -> flight.getAirline().equalsIgnoreCase(nombreAerolinea))
+                        .collect(Collectors.toList()));
+            } else {
+                throw new Exception("database file cannot be loaded.");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+
+    }
 
     // -------------------------------------- utils --------------------------------------
     // -----------------------------------------------------------------------------------
@@ -41,4 +59,5 @@ public class FlightService {
         // return (date.compareTo(start) >= 0 && date.compareTo(end) <= 0);
         return (date.isAfter(start) && date.isBefore(end));
     }
+
 }
