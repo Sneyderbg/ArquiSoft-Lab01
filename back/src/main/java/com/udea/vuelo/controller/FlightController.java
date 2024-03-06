@@ -34,8 +34,8 @@ public class FlightController {
         return flightService.searchFlightsByPrice(precioInicial, precioFinal);
     }
     @GetMapping("/searchByName")
-    public List<List<Flight>> searchFlightsByName(@RequestParam(name = "nombreAerolinea") String nombreAerolinea) {
+    public List<List<Flight>> searchFlightsByName(@RequestParam(name = "nameAirline") String nameAirline) {
 
-        return flightService.searchFlightsByName(nombreAerolinea);
+        return flightService.searchFlightsByName(nameAirline);
     }
 }

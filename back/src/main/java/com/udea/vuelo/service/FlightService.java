@@ -34,6 +34,7 @@ public class FlightService {
         }
 
     }
+    //Funcion que se encarga de filtrar los vuelos por precio
     public List<List<Flight>> searchFlightsByPrice(int inicialPrice, int finalPrice) {
 
         try {
@@ -52,7 +53,8 @@ public class FlightService {
         }
 
     }
-    public List<List<Flight>> searchFlightsByName(String nombreAerolinea) {
+    //Funcion que se encarga de Buscar los vuelos por nombre de la aerolinea
+    public List<List<Flight>> searchFlightsByName(String nameAirline) {
 
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -60,7 +62,7 @@ public class FlightService {
             if (fileStream != null) {
                 Flight[] flights = objectMapper.readValue(fileStream, Flight[].class);
                 return Arrays.asList(Arrays.stream(flights)
-                        .filter(flight -> flight.getAirline().equalsIgnoreCase(nombreAerolinea))
+                        .filter(flight -> flight.getAirline().equalsIgnoreCase(nameAirline))
                         .collect(Collectors.toList()));
             } else {
                 throw new Exception("database file cannot be loaded.");
