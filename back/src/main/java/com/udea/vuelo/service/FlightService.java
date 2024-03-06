@@ -34,6 +34,24 @@ public class FlightService {
         }
 
     }
+    public List<List<Flight>> searchFlightsByPrice(int inicialPrice, int finalPrice) {
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            InputStream fileStream = getClass().getClassLoader().getResourceAsStream(filePath);
+            if (fileStream != null) {
+                Flight[] flights = objectMapper.readValue(fileStream, Flight[].class);
+                return Arrays.asList(Arrays.stream(flights)
+                        .filter(flight -> isPriceInRange(flight.getPrice(), inicialPrice, finalPrice))
+                        .collect(Collectors.toList()));
+            } else {
+                throw new Exception("database file cannot be loaded.");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+
+    }
     public List<List<Flight>> searchFlightsByName(String nombreAerolinea) {
 
         try {
@@ -58,6 +76,9 @@ public class FlightService {
     public boolean isDateInRange(LocalDate date, LocalDate start, LocalDate end) {
         // return (date.compareTo(start) >= 0 && date.compareTo(end) <= 0);
         return (date.isAfter(start) && date.isBefore(end));
+    }
+    public boolean isPriceInRange(int price,int priceInicial,int priceFinal){
+        return (price >= priceInicial && price <= priceFinal);
     }
 
 }

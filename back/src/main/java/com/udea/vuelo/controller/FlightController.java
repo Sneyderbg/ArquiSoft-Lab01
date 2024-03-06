@@ -26,6 +26,13 @@ public class FlightController {
                 LocalDate end = LocalDate.parse(endDate);
                 return flightService.searchFlights(start, end);
     }
+    @GetMapping("/searchByPrice")
+    public List<List<Flight>> searchFlightsByPrice(@RequestParam(name = "inicialPrice") String inicialPrice,
+                                            @RequestParam(name = "finalPrice") String finalPrice) {
+        int precioInicial = Integer.parseInt(inicialPrice);
+        int precioFinal = Integer.parseInt(finalPrice);
+        return flightService.searchFlightsByPrice(precioInicial, precioFinal);
+    }
     @GetMapping("/searchByName")
     public List<List<Flight>> searchFlightsByName(@RequestParam(name = "nombreAerolinea") String nombreAerolinea) {
 
