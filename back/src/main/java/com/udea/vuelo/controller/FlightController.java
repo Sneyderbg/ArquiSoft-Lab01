@@ -38,4 +38,15 @@ public class FlightController {
 
         return flightService.searchFlightsByName(nameAirline);
     }
+    @GetMapping("/searchByOrigin")
+    public List<List<Flight>> searchFlightsByOrigin(@RequestParam(name = "cityOfOrigin") String cityOfOrigin) {
+
+        return flightService.searchFlightsByOrigin(cityOfOrigin);
+    }
+    @GetMapping("/searchByDestination")
+    public List<List<Flight>> searchFlightsByDestination(@RequestParam(name = "cityOfDestination") String cityOfDestination) {
+
+        return flightService.searchFlightsByDestination(cityOfDestination);
+    }
+
 }

@@ -72,6 +72,42 @@ public class FlightService {
         }
 
     }
+    public List<List<Flight>> searchFlightsByDestination(String placeOfDestination) {
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            InputStream fileStream = getClass().getClassLoader().getResourceAsStream(filePath);
+            if (fileStream != null) {
+                Flight[] flights = objectMapper.readValue(fileStream, Flight[].class);
+                return Arrays.asList(Arrays.stream(flights)
+                        .filter(flight -> flight.getDestination().equalsIgnoreCase(placeOfDestination))
+                        .collect(Collectors.toList()));
+            } else {
+                throw new Exception("database file cannot be loaded.");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+
+    }
+    public List<List<Flight>> searchFlightsByOrigin(String placeofOrigin) {
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            InputStream fileStream = getClass().getClassLoader().getResourceAsStream(filePath);
+            if (fileStream != null) {
+                Flight[] flights = objectMapper.readValue(fileStream, Flight[].class);
+                return Arrays.asList(Arrays.stream(flights)
+                        .filter(flight -> flight.getOrigin().equalsIgnoreCase(placeofOrigin))
+                        .collect(Collectors.toList()));
+            } else {
+                throw new Exception("database file cannot be loaded.");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+
+    }
 
     // -------------------------------------- utils --------------------------------------
     // -----------------------------------------------------------------------------------
