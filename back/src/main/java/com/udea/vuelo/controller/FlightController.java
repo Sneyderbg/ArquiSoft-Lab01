@@ -20,11 +20,11 @@ public class FlightController {
     private FlightService flightService;
 
     @GetMapping("/search")
-    public List<List<Flight>> searchFlights(@RequestParam(name = "startDate") String startDate,
+    public List<List<Flight>> searchFlightsByDate(@RequestParam(name = "startDate") String startDate,
             @RequestParam(name = "endDate") String endDate) {
         LocalDate start = LocalDate.parse(startDate);
         LocalDate end = LocalDate.parse(endDate);
-        return flightService.searchFlights(start, end);
+        return flightService.searchFlightsByDate(start, end);
     }
 
     @GetMapping("/searchByPrice")

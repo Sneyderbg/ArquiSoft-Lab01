@@ -32,7 +32,7 @@ public class FlightService {
         }
     }
 
-    public List<List<Flight>> searchFlights(LocalDate startDate, LocalDate endDate) {
+    public List<List<Flight>> searchFlightsByDate(LocalDate startDate, LocalDate endDate) {
 
         return Arrays.asList(Arrays.stream(flights)
                 .filter(flight -> isDateInRange(flight.getDepartureDate(), startDate, endDate))
