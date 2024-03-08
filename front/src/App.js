@@ -3,7 +3,7 @@ import { FlightSearch } from "./FlightSearch";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <FlightSearch />
     </div>
   );

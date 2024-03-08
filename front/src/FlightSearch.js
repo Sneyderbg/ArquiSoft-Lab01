@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { FlightsTable } from "./FlightsTable";
 
 function FlightSearch() {
   const [startDate, setStartDate] = useState("2024-01-01");
@@ -12,7 +13,8 @@ function FlightSearch() {
     error: "",
   });
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault();
     setResponse({ flights: [], loading: true, success: false, error: "" });
     axios
       .get(
@@ -40,51 +42,41 @@ function FlightSearch() {
   return (
     <div>
       <h1>Buscar vuelos</h1>
-      <div>
-        <label>Fecha de inicio:</label>
-        <input
-          type="date"
-          value={startDate}
-          onChange={({ target: { value } }) => {
-            setStartDate(value);
-          }}
-        ></input>
-        <label>Fecha de fin:</label>
-        <input
-          type="date"
-          value={endDate}
-          onChange={({ target: { value } }) => {
-            setEndDate(value);
-          }}
-        ></input>
-        <button onClick={handleSearch}>Buscar</button>
-      </div>
+      <form onSubmit={handleSearch}>
+        <div>
+          <label>Fecha de inicio:</label>
+          <input
+            type="date"
+            value={startDate}
+            onChange={({ target: { value } }) => {
+              setStartDate(value);
+            }}
+          ></input>
+        </div>
+        <div>
+          <label>Fecha de fin:</label>
+          <input
+            type="date"
+            value={endDate}
+            onChange={({ target: { value } }) => {
+              setEndDate(value);
+            }}
+          ></input>
+        </div>
+        <div>
+          <button type="submit">Buscar</button>
+        </div>
+      </form>
       <div>
         {response.loading && <p>Cargando...</p>}
         {response.error.length > 0 && <h3>response.error</h3>}
         {response.flights.length === 0 && response.success && (
           <p>No hay vuelos programados para estas fechas</p>
         )}
-        {response.flights.length > 0 && (
-          <ul>
-            {response.flights.map((flight, idx) => {
-              return (
-                <>
-                  <li id={`flight#${idx}`} key={flight.id}>
-                    {`[${flight.id}] de ${flight.origin} a ${flight.destination}`}
-                    <ul>
-                      <li>{`Aerolinea: ${flight.airline}`}</li>
-                      <li>{`Sale el ${flight.departureDate}`}</li>
-                      <li>{`Llega el ${flight.arrivalDate}`}</li>
-                      <li>{`Cuesta $${flight.price}`}</li>
-                    </ul>
-                  </li>
-                </>
-              );
-            })}
-          </ul>
-        )}
       </div>
+      {response.flights.length > 0 && (
+        <FlightsTable flights={response.flights}></FlightsTable>
+      )}
     </div>
   );
 }
