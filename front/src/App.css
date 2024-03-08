@@ -68,3 +68,7 @@ table tbody tr:nth-child(odd)
 {
   background-color: #80808022;
 }
+
+table thead th:hover {
+  cursor: pointer;
+}

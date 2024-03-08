@@ -27,7 +27,6 @@ function FlightSearch() {
           success: true,
           error: "",
         });
-        console.log(res)
       })
       .catch((err) => {
         console.error(err);
