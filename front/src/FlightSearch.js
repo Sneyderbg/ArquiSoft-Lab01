@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FlightsTable } from "./FlightsTable";
 
 function FlightSearch({ handleSearch }) {
   const [startDate, setStartDate] = useState("2024-01-01");

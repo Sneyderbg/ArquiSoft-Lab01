@@ -20,31 +20,36 @@ public class FlightController {
     private FlightService flightService;
 
     @GetMapping("/search")
-    public List<List<Flight>> searchFlights(@RequestParam(name = "startDate") String startDate,
+    public List<Flight> searchFlightsByDate(@RequestParam(name = "startDate") String startDate,
             @RequestParam(name = "endDate") String endDate) {
-                LocalDate start = LocalDate.parse(startDate);
-                LocalDate end = LocalDate.parse(endDate);
-                return flightService.searchFlights(start, end);
+        LocalDate start = LocalDate.parse(startDate);
+        LocalDate end = LocalDate.parse(endDate);
+        return flightService.searchFlightsByDate(start, end);
     }
+
     @GetMapping("/searchByPrice")
-    public List<List<Flight>> searchFlightsByPrice(@RequestParam(name = "inicialPrice") String inicialPrice,
-                                            @RequestParam(name = "finalPrice") String finalPrice) {
+    public List<Flight> searchFlightsByPrice(@RequestParam(name = "inicialPrice") String inicialPrice,
+            @RequestParam(name = "finalPrice") String finalPrice) {
         int precioInicial = Integer.parseInt(inicialPrice);
         int precioFinal = Integer.parseInt(finalPrice);
         return flightService.searchFlightsByPrice(precioInicial, precioFinal);
     }
+
     @GetMapping("/searchByName")
-    public List<List<Flight>> searchFlightsByName(@RequestParam(name = "nameAirline") String nameAirline) {
+    public List<Flight> searchFlightsByName(@RequestParam(name = "nameAirline") String nameAirline) {
 
         return flightService.searchFlightsByName(nameAirline);
     }
+
     @GetMapping("/searchByOrigin")
-    public List<List<Flight>> searchFlightsByOrigin(@RequestParam(name = "cityOfOrigin") String cityOfOrigin) {
+    public List<Flight> searchFlightsByOrigin(@RequestParam(name = "cityOfOrigin") String cityOfOrigin) {
 
         return flightService.searchFlightsByOrigin(cityOfOrigin);
     }
+
     @GetMapping("/searchByDestination")
-    public List<List<Flight>> searchFlightsByDestination(@RequestParam(name = "cityOfDestination") String cityOfDestination) {
+    public List<Flight> searchFlightsByDestination(
+            @RequestParam(name = "cityOfDestination") String cityOfDestination) {
 
         return flightService.searchFlightsByDestination(cityOfDestination);
     }
