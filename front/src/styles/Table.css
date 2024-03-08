@@ -1,0 +1,8 @@
+.tableBox{
+    display: grid;
+    grid-template-columns: 1fr repeat(6,2fr);
+    gap: 2px;
+    border: 1px solid black;
+    background-color: greenyellow;
+    padding: 2px;
+}
