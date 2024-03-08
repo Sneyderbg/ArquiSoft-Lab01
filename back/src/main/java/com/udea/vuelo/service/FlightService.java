@@ -32,45 +32,43 @@ public class FlightService {
         }
     }
 
-    public List<List<Flight>> searchFlights(LocalDate startDate, LocalDate endDate) {
+    public List<Flight> searchFlightsByDate(LocalDate startDate, LocalDate endDate) {
 
-        return Arrays.asList(Arrays.stream(flights)
+        return Arrays.stream(flights)
                 .filter(flight -> isDateInRange(flight.getDepartureDate(), startDate, endDate))
-                .collect(Collectors.toList()));
+                .collect(Collectors.toList());
 
     }
 
     // Funcion que se encarga de filtrar los vuelos por precio
-    public List<List<Flight>> searchFlightsByPrice(int inicialPrice, int finalPrice) {
-
-        return Arrays.asList(Arrays.stream(flights)
+    public List<Flight> searchFlightsByPrice(int inicialPrice, int finalPrice) {
+        return Arrays.stream(flights)
                 .filter(flight -> isPriceInRange(flight.getPrice(), inicialPrice, finalPrice))
-                .collect(Collectors.toList()));
-
+                .collect(Collectors.toList());
     }
 
     // Funcion que se encarga de Buscar los vuelos por nombre de la aerolinea
-    public List<List<Flight>> searchFlightsByName(String nameAirline) {
+    public List<Flight> searchFlightsByName(String nameAirline) {
 
-        return Arrays.asList(Arrays.stream(flights)
+        return Arrays.stream(flights)
                 .filter(flight -> flight.getAirline().equalsIgnoreCase(nameAirline))
-                .collect(Collectors.toList()));
+                .collect(Collectors.toList());
 
     }
 
-    public List<List<Flight>> searchFlightsByDestination(String placeOfDestination) {
+    public List<Flight> searchFlightsByDestination(String placeOfDestination) {
 
-        return Arrays.asList(Arrays.stream(flights)
+        return Arrays.stream(flights)
                 .filter(flight -> flight.getDestination().equalsIgnoreCase(placeOfDestination))
-                .collect(Collectors.toList()));
+                .collect(Collectors.toList());
 
     }
 
-    public List<List<Flight>> searchFlightsByOrigin(String placeofOrigin) {
+    public List<Flight> searchFlightsByOrigin(String placeofOrigin) {
 
-        return Arrays.asList(Arrays.stream(flights)
+        return Arrays.stream(flights)
                 .filter(flight -> flight.getOrigin().equalsIgnoreCase(placeofOrigin))
-                .collect(Collectors.toList()));
+                .collect(Collectors.toList());
 
     }
 
