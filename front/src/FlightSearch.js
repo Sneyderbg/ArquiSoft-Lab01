@@ -22,11 +22,12 @@ function FlightSearch() {
       )
       .then((res) => {
         setResponse({
-          flights: res.data[0],
+          flights: res.data,
           loading: false,
           success: true,
           error: "",
         });
+        console.log(res)
       })
       .catch((err) => {
         console.error(err);
