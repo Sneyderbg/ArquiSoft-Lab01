@@ -1,0 +1,12 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  background-color: #eeeeee;
+  padding: 2rem 1.4rem;
+  border-radius: 8px;
+  width: auto;
+  height: fit-content;
+  min-width: 120px;
+  margin: 6rem 4rem;
+  gap: 0.8rem;
+}

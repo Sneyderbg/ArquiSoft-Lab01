@@ -1,74 +1,55 @@
-.App {
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
   text-align: center;
+  justify-content: flex-start;
+}
+
+.app main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem 6rem 1rem 1rem;
 }
 
 form {
-  margin: 2.5rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
-  gap: .8rem;
-}
-
-
-.flightsTable {
-  margin: 4rem 1rem;
+  margin: 2.5rem auto;
+  padding: 0.8rem;
   width: fit-content;
-  border-radius: 8px;
-  border-style: outset;
+  gap: 0.8rem;
+
+  background-color: #eeeeee;
+  border-radius: 4px;
 }
 
-@media (min-width: 640px) {
-  .flightsTable {
-    margin: 4rem 4rem;
-  }
-}
-
-@media (min-width: 720px) {
-  .flightsTable {
-    margin: 4rem 8rem;
-  }
-}
-
-table {
+.inputField {
   display: flex;
-  flex-flow: column;
-  height: 100%;
-  width: 100%;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2rem;
 }
 
-table thead {
-  flex: 0 0 auto;
-  width: calc(100% - 0.9em);
+.inputField input {
+  width: 30%;
+  min-width: 1.2rem;
 }
 
-table tbody {
-  /* body takes all the remaining available space */
-  flex: 1 1 auto;
-  display: block;
-  overflow-y: auto;
+.submitBtn {
+  border-style: solid;
+  border-radius: 4px;
+  padding: 0.2rem;
+  margin: .6rem auto;
+  background-color: gainsboro;
 }
 
-table tbody tr {
-  width: 100%;
-}
-
-table thead, table tbody tr {
-  display: table;
-  table-layout: fixed;
-}
-
-table tbody tr:nth-child(even)
-{
-  background-color: #80808066;
-}
-
-table tbody tr:nth-child(odd)
-{
-  background-color: #80808022;
-}
-
-table thead th:hover {
+form button:hover {
   cursor: pointer;
+  background-color: color-mix(in srgb, gainsboro 35%, gray 75%);
+  transform: translate(0%, -1px);
 }

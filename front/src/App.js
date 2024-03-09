@@ -2,8 +2,11 @@ import { useState } from "react";
 import "./App.css";
 import { FlightSearch } from "./FlightSearch";
 import { Table } from "./components/Table";
+import { NavBar } from "./components/NavBar";
 
 function App() {
+  const [activeFilter, setActiveFilter] = useState(0);
+
   const [flights, setFlights] = useState([]);
   const handleSearchByDatesClick = () => {
     const startDate = document.getElementById("startDate").value;
@@ -21,10 +24,33 @@ function App() {
       .catch((error) => alert("Error en el servidor", error.status));
   };
 
+  const handleUnimplementedSearch = (e) => {
+    console.error(
+      "there is no function to filter by",
+      ["dates", "airline", "origin", "destination", "price"][activeFilter],
+      "in App.js"
+    );
+    alert("unimplemented filter (see console)");
+  };
+
   return (
-    <div>
-      <FlightSearch handleSearch={handleSearchByDatesClick} />
-      <Table flights={flights} />
+    <div className="app">
+      <NavBar
+        activeFilter={activeFilter}
+        onFilterBtnClick={(idx) => setActiveFilter(idx)}
+      />
+      <main>
+        <h1>Buscador de vuelos</h1>
+        <FlightSearch
+          activeFilter={activeFilter}
+          handleSearch={
+            activeFilter === 0
+              ? handleSearchByDatesClick
+              : handleUnimplementedSearch
+          }
+        />
+        <Table flights={flights} />
+      </main>
     </div>
   );
 }

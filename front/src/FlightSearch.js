@@ -1,34 +1,35 @@
-import React, { useState } from "react";
-import { FlightsTable } from "./FlightsTable";
+import React from "react";
+import DateRange from "./components/DateRange";
+import PriceRange from "./components/PriceRange";
 
-function FlightSearch({ handleSearch }) {
-  const [startDate, setStartDate] = useState("2024-01-01");
-  const [endDate, setEndDate] = useState("2024-01-01");
+function FlightSearch({ activeFilter, handleSearch }) {
+  const singleInputs = {
+    1: { labelTxt: "Nombre de aerolina:", inputId: "airline" },
+    2: { labelTxt: "Ciudad de origen:", inputId: "origin" },
+    3: { labelTxt: "Ciudad de destino:", inputId: "destination" },
+  };
 
   return (
     <div>
-      <h3>Buscar vuelos</h3>
-      <div>
-        <label>Fecha de inicio:</label>
-        <input
-          type="date"
-          id="startDate"
-          value={startDate}
-          onChange={({ target: { value } }) => {
-            setStartDate(value);
-          }}
-        ></input>
-        <label>Fecha de fin:</label>
-        <input
-          type="date"
-          id="endDate"
-          value={endDate}
-          onChange={({ target: { value } }) => {
-            setEndDate(value);
-          }}
-        ></input>
-        <button onClick={handleSearch}>Buscar</button>
-      </div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSearch(e);
+        }}
+      >
+        <h3>Buscar vuelos</h3>
+        {activeFilter === 0 && <DateRange />}
+        {activeFilter > 0 && activeFilter < 4 && (
+          <div className="inputField">
+            <label htmlFor={singleInputs[activeFilter].inputId}>
+              {singleInputs[activeFilter].labelTxt}
+            </label>
+            <input id={singleInputs[activeFilter].inputId} type="text"></input>
+          </div>
+        )}
+        {activeFilter === 4 && <PriceRange />}
+        <button type="submit" className="submitBtn">Buscar</button>
+      </form>
     </div>
   );
 }

@@ -1,0 +1,22 @@
+.navbar-btn {
+  border-style: solid;
+  border-radius: 2px;
+  padding: 0.2rem;
+  background-color: gainsboro;
+}
+
+.navbar-btn:hover {
+  cursor: pointer;
+  background-color: color-mix(in srgb, gainsboro 35%, gray 75%);
+  transform: translate(0%, -1px);
+}
+
+.navbar-btn:disabled {
+  background-color: gray;
+  border-style: inset;
+  border-color: gainsboro;
+}
+
+.navbar-btn:disabled:hover {
+  transform: none;
+}
