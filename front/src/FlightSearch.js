@@ -4,7 +4,7 @@ import PriceRange from "./components/PriceRange";
 
 function FlightSearch({ activeFilter, handleSearch }) {
   const singleInputs = {
-    1: { labelTxt: "Nombre de aerolina:", inputId: "airline" },
+    1: { labelTxt: "Nombre de aerolinea:", inputId: "airline" },
     2: { labelTxt: "Ciudad de origen:", inputId: "origin" },
     3: { labelTxt: "Ciudad de destino:", inputId: "destination" },
   };
@@ -28,7 +28,9 @@ function FlightSearch({ activeFilter, handleSearch }) {
           </div>
         )}
         {activeFilter === 4 && <PriceRange />}
-        <button type="submit" className="submitBtn">Buscar</button>
+        <button type="submit" className="submitBtn">
+          Buscar
+        </button>
       </form>
     </div>
   );
