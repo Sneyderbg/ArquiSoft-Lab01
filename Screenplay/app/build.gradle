@@ -31,28 +31,26 @@ ext {
 }
 
 dependencies {
-    implementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
-    implementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
-    implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
-    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    implementation "net.serenity-bdd:serenity-core:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-junit:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$serenityCucumberVersion"
     implementation 'org.slf4j:slf4j-simple:2.0.5'
-    implementation "net.serenity-bdd:serenity-screenplay-rest:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:$serenityVersion"
 
-    //Test compilation
-    testImplementation "junit:junit:$rootProject.ext.junit"
-    testImplementation "org.hamcrest:hamcrest-all:$rootProject.ext.hamcrest"
-    implementation 'org.slf4j:slf4j-simple:2.0.5'
+    // Test dependencies
+    testImplementation "junit:junit:$junit"
+    testImplementation "org.hamcrest:hamcrest-all:$hamcrest"
     
+    // Lombok dependencies
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
 
-    //Lombok dependencies
-    compileOnly "org.projectlombok:lombok:${lombokVersion}"
-    annotationProcessor  "org.projectlombok:lombok:${lombokVersion}"
-    testCompileOnly  "org.projectlombok:lombok:${lombokVersion}"
-
-    //Additional library
+    // Additional library
     implementation group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.12.0'
-
 }
+
 
 tasks.named('test') {
     // System configs

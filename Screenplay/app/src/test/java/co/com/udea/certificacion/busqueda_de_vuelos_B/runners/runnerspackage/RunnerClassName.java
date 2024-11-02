@@ -1,4 +1,4 @@
-package co.com.udea.certificacion.busqueda_de_vuelos_B.runners;
+package co.com.udea.certificacion.busqueda_de_vuelos_b.runners.runnerspackage;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/features/.../",
-        glue = "co.com.udea.certificacion.stepdefinitions",
+        glue = "co.com.udea.certificacion.busqueda_de_vuelos_b.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class Runner {}
+public class RunnerClassName {}
