@@ -1,10 +1,11 @@
-Feature: # Feature to evaluate
- # I as ... need ... for ...
+Feature: Búsqueda de vuelos por ciudad de origen
 
- Scenario Outline: # Scenario to evaluate
-    Given # describe the initial context of the system
-    When # describe an event or action
-    Then # describe result
+  Scenario: Buscar vuelos desde una ciudad de origen existente
+    Given la ciudad de origen "Bogotá"
+    When se realiza la búsqueda de vuelos desde la ciudad especificada
+    Then se muestra una lista de vuelos que salen desde "Bogotá"
 
-  Examples:
-  |||
+  Scenario: Buscar vuelos desde una ciudad de origen sin vuelos
+    Given la ciudad de origen "CiudadInexistente"
+    When se realiza la búsqueda de vuelos desde la ciudad especificada
+    Then no se muestran vuelos disponibles desde "CiudadInexistente"
