@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Búsqueda de vuelos por fecha" skipped="0" tests="1" time="0.05" timestamp="2024-11-02 08:28:40"><testcase name="Buscar vuelos entre dos fechas válidas"><failure message="1 expectation failed.&#10;JSON path [0].airline doesn't match.&#10;Expected: Airways Inc.&#10;  Actual: null&#10;" type="java.lang.AssertionError">1 expectation failed.
+JSON path [0].airline doesn't match.
+Expected: Airways Inc.
+  Actual: null
+</failure><system-err>1 expectation failed.
+JSON path [0].airline doesn't match.
+Expected: Airways Inc.
+  Actual: null
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)&#13;
+io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)&#13;
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)&#13;
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)&#13;
+co.com.udea.certificacion.busqueda_de_vuelos_B.stepdefinitions.FlightDateSearchStepDefinition.lambda$heShouldSeeTheFlightInformation$0(FlightDateSearchStepDefinition.java:43)&#13;
+co.com.udea.certificacion.busqueda_de_vuelos_B.stepdefinitions.FlightDateSearchStepDefinition.heShouldSeeTheFlightInformation(FlightDateSearchStepDefinition.java:42)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)&#13;
+</system-err></testcase></testsuite>

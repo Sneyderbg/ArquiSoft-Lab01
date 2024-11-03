@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Búsqueda de vuelos por ciudad de origen" tests="2" skipped="0" failures="2" errors="0" timestamp="2024-11-03T01:39:25" hostname="ASUS_RIVERA" time="0.196">
+  <properties/>
+  <testcase name="Buscar vuelos desde una ciudad de origen existente" classname="Búsqueda de vuelos por ciudad de origen" time="0.111">
+    <failure message="io.cucumber.junit.UndefinedStepException: The step 'la ciudad de origen &quot;Bogotá&quot;' and 2 other step(s) are undefined.&#10;You can implement these steps using the snippet(s) below:&#10;&#10;@Given(&quot;la ciudad de origen {string}&quot;)&#10;public void laCiudadDeOrigen(String string) {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;@When(&quot;se realiza la búsqueda de vuelos desde la ciudad especificada&quot;)&#10;public void seRealizaLaBúsquedaDeVuelosDesdeLaCiudadEspecificada() {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;@Then(&quot;se muestra una lista de vuelos que salen desde {string}&quot;)&#10;public void seMuestraUnaListaDeVuelosQueSalenDesde(String string) {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;" type="io.cucumber.junit.UndefinedStepException">io.cucumber.junit.UndefinedStepException: The step 'la ciudad de origen &quot;Bogotá&quot;' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given(&quot;la ciudad de origen {string}&quot;)
+public void laCiudadDeOrigen(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;se realiza la búsqueda de vuelos desde la ciudad especificada&quot;)
+public void seRealizaLaBúsquedaDeVuelosDesdeLaCiudadEspecificada() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;se muestra una lista de vuelos que salen desde {string}&quot;)
+public void seMuestraUnaListaDeVuelosQueSalenDesde(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+</failure>
+  </testcase>
+  <testcase name="Buscar vuelos desde una ciudad de origen sin vuelos" classname="Búsqueda de vuelos por ciudad de origen" time="0.085">
+    <failure message="io.cucumber.junit.UndefinedStepException: The step 'la ciudad de origen &quot;CiudadInexistente&quot;' and 2 other step(s) are undefined.&#10;You can implement these steps using the snippet(s) below:&#10;&#10;@Given(&quot;la ciudad de origen {string}&quot;)&#10;public void laCiudadDeOrigen(String string) {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;@When(&quot;se realiza la búsqueda de vuelos desde la ciudad especificada&quot;)&#10;public void seRealizaLaBúsquedaDeVuelosDesdeLaCiudadEspecificada() {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;@Then(&quot;no se muestran vuelos disponibles desde {string}&quot;)&#10;public void noSeMuestranVuelosDisponiblesDesde(String string) {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;" type="io.cucumber.junit.UndefinedStepException">io.cucumber.junit.UndefinedStepException: The step 'la ciudad de origen &quot;CiudadInexistente&quot;' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given(&quot;la ciudad de origen {string}&quot;)
+public void laCiudadDeOrigen(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When(&quot;se realiza la búsqueda de vuelos desde la ciudad especificada&quot;)
+public void seRealizaLaBúsquedaDeVuelosDesdeLaCiudadEspecificada() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then(&quot;no se muestran vuelos disponibles desde {string}&quot;)
+public void noSeMuestranVuelosDisponiblesDesde(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Buscar vuelos desde una ciudad de origen existente(búsqueda-de-vuelos-por-ciudad-de-origen;buscar-vuelos-desde-una-ciudad-de-origen-existente)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   ___   _  _   ___    ___   _  _    ___ 
+ |_   _| | __| / __| |_   _|   | _ \ | __| | \| | |   \  |_ _| | \| |  / __|
+   | |   | _|  \__ \   | |     |  _/ | _|  | .` | | |) |  | |  | .` | | (_ |
+   |_|   |___| |___/   |_|     |_|   |___| |_|\_| |___/  |___| |_|\_|  \___|
+
+Buscar vuelos desde una ciudad de origen existente
+-----------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Buscar vuelos desde una ciudad de origen sin vuelos(búsqueda-de-vuelos-por-ciudad-de-origen;buscar-vuelos-desde-una-ciudad-de-origen-sin-vuelos)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   ___   _  _   ___    ___   _  _    ___ 
+ |_   _| | __| / __| |_   _|   | _ \ | __| | \| | |   \  |_ _| | \| |  / __|
+   | |   | _|  \__ \   | |     |  _/ | _|  | .` | | |) |  | |  | .` | | (_ |
+   |_|   |___| |___/   |_|     |_|   |___| |_|\_| |___/  |___| |_|\_|  \___|
+
+Buscar vuelos desde una ciudad de origen sin vuelos
+-----------------------------------------------------------------------------
+]]></system-err>
+</testsuite>

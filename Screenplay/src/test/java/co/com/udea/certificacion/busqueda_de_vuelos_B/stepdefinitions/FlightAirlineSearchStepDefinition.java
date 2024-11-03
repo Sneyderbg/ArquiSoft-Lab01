@@ -17,7 +17,7 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 public class FlightAirlineSearchStepDefinition {
 
     Actor usuario = Actor.named("usuario");
-    final String airlineName = "JetFlya";
+    final String airlineName = "JetFly";
 
     @Before
     public void config() {

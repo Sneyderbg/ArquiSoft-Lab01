@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">6.230s</div>
+<div class="counter">6.202s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,39 +61,16 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
+<a href="#tab1">Standard output</a>
 </li>
 <li>
-<a href="#tab2">Standard output</a>
-</li>
-<li>
-<a href="#tab3">Standard error</a>
+<a href="#tab2">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="Buscar vuelos por nombre de una aerolinea existente"></a>
-<h3 class="failures">Buscar vuelos por nombre de una aerolinea existente</h3>
-<span class="code">
-<pre>java.lang.AssertionError: 1 expectation failed.
-JSON path [0].airline doesn't match.
-Expected: JetFlya
-  Actual: null
-
-	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
-	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
-	at net.serenitybdd.screenplay.Actor.should(Actor.java:397)
-	at co.com.udea.certificacion.busqueda_de_vuelos_B.stepdefinitions.FlightAirlineSearchStepDefinition.heShouldSeeTheFlightInformation(FlightAirlineSearchStepDefinition.java:40)
-	at ✽.se muestra una lista de vuelos de JetFly(file:///C:/Users/sneyd/projects/ArquiSoft-Lab01/Screenplay/src/test/resources/features/searchbyairline.feature:8)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -104,19 +81,19 @@ Expected: JetFlya
 </tr>
 </thead>
 <tr>
-<td class="failures">Buscar vuelos por nombre de una aerolinea existente</td>
-<td class="failures">6.230s</td>
-<td class="failures">failed</td>
+<td class="success">Buscar vuelos por nombre de una aerolinea existente</td>
+<td class="success">6.202s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
 <pre>Request method:	GET
-Request URI:	http://localhost:8080/flights/searchByName?nameAirline=JetFlya
+Request URI:	http://localhost:8080/flights/searchByName?nameAirline=JetFly
 Proxy:			&lt;none&gt;
-Request params:	nameAirline=JetFlya
+Request params:	nameAirline=JetFly
 Query params:	&lt;none&gt;
 Form params:	&lt;none&gt;
 Path params:	&lt;none&gt;
@@ -131,17 +108,25 @@ Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Sun, 03 Nov 2024 00:16:54 GMT
+Date: Sun, 03 Nov 2024 01:39:23 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
 [
-    
+    {
+        &quot;id&quot;: 2,
+        &quot;airline&quot;: &quot;JetFly&quot;,
+        &quot;origin&quot;: &quot;Medellin&quot;,
+        &quot;destination&quot;: &quot;Miami&quot;,
+        &quot;price&quot;: 443,
+        &quot;departureDate&quot;: &quot;2024-01-02&quot;,
+        &quot;arrivalDate&quot;: &quot;2024-01-02&quot;
+    }
 ]
 </pre>
 </span>
 </div>
-<div id="tab3" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
 <pre>[Test worker] INFO  - 
@@ -152,16 +137,14 @@ Connection: keep-alive
 
 Buscar vuelos por nombre de una aerolinea existente(busqueda-de-vuelos-por-nombre-de-la-aerolinea;buscar-vuelos-por-nombre-de-una-aerolinea-existente)
 --------------------------------------------------------------------------------
-[Test worker] ERROR  - 
-  _____   ___   ___   _____     ___     _     ___   _      ___   ___  
- |_   _| | __| / __| |_   _|   | __|   /_\   |_ _| | |    | __| |   \ 
-   | |   | _|  \__ \   | |     | _|   / _ \   | |  | |__  | _|  | |) |
-   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___| |____| |___| |___/ 
+[Test worker] INFO  - 
+  _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
+ |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 
+   | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
 
 Buscar vuelos por nombre de una aerolinea existente
------------------------------------------------------------------------
-[Test worker] ERROR  -     Test failed at step: A valid response is returned
-[Test worker] ERROR  -     1 expectation failed.JSON path [0].airline doesn't match.Expected: JetFlya  Actual: null
+----------------------------------------------------------------------
 </pre>
 </span>
 </div>
@@ -173,7 +156,7 @@ Buscar vuelos por nombre de una aerolinea existente
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.10.2</a> at Nov 2, 2024, 7:16:56 PM</p>
+<a href="http://www.gradle.org">Gradle 8.10.2</a> at Nov 2, 2024, 8:39:26 PM</p>
 </div>
 </div>
 </body>

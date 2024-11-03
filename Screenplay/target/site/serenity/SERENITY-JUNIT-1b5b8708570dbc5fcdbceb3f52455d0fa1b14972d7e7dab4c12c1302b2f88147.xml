@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Búsqueda de vuelos por precio" skipped="2" tests="2" time="0.14" timestamp="2024-11-02 08:39:26"><testcase name="Buscar vuelos entre dos precios válidos"><skipped/></testcase><testcase name="Buscar vuelos cuando no hay vuelos en el rango de precios"><skipped/></testcase></testsuite>
