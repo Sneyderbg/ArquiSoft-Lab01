@@ -1,9 +1,8 @@
 #language: en
 
-Feature: Búsqueda de vuelos por nombre de la aerolínea
+Feature: Busqueda de vuelos por nombre de la aerolinea
 
-
-  Scenario: Buscar vuelos por nombre de una aerolínea existente
-    Given I am connect to capacities of the service
-    When se realiza la búsqueda de vuelos por nombre de aerolínea
-    Then se muestra una lista de vuelos de "JetFly"
+  Scenario: Buscar vuelos por nombre de una aerolinea existente
+    Given el nombre de la aerolinea JetFly
+    When se realiza la busqueda de vuelos por nombre de aerolinea
+    Then se muestra una lista de vuelos de JetFly

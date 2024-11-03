@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/flightdatesearch/.../",
+        features = "src/test/resources/features/searchbydate.feature",
         glue = "co.com.udea.certificacion.busqueda_de_vuelos_B.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
