@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Búsqueda de vuelos por ciudad de destino" skipped="2" tests="2" time="0.12" timestamp="2024-11-03 01:21:55"><testcase name="Buscar vuelos hacia una ciudad de destino existente"><skipped/></testcase><testcase name="Buscar vuelos hacia una ciudad de destino sin vuelos"><skipped/></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Búsqueda de vuelos por ciudad de destino" skipped="0" tests="2" time="0.1" timestamp="2024-11-03 02:07:15"><testcase name="Buscar vuelos hacia una ciudad de destino existente"><failure message="1 expectation failed.&#10;JSON path destinationCity doesn't match.&#10;Expected: a collection containing &quot;Miami&quot;&#10;  Actual: &lt;[null]&gt;&#10;" type="java.lang.AssertionError">1 expectation failed.
+JSON path destinationCity doesn't match.
+Expected: a collection containing "Miami"
+  Actual: &lt;[null]&gt;
+</failure><system-err>1 expectation failed.
+JSON path destinationCity doesn't match.
+Expected: a collection containing "Miami"
+  Actual: &lt;[null]&gt;
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)&#13;
+io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)&#13;
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)&#13;
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)&#13;
+co.com.udea.certificacion.busqueda_de_vuelos_B.stepdefinitions.FlightDestinationSearch.lambda$heShouldSeeFlightsToCity$0(FlightDestinationSearch.java:41)&#13;
+co.com.udea.certificacion.busqueda_de_vuelos_B.stepdefinitions.FlightDestinationSearch.heShouldSeeFlightsToCity(FlightDestinationSearch.java:40)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)&#13;
+</system-err></testcase><testcase name="Buscar vuelos hacia una ciudad de destino sin vuelos"/></testsuite>

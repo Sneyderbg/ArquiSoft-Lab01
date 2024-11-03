@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - Class Busqueda de vuelos por fecha</title>
+<title>Test results - Class Busqueda de vuelos por ciudad de destino</title>
 <link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../js/report.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="content">
-<h1>Class Busqueda de vuelos por fecha</h1>
+<h1>Class Busqueda de vuelos por ciudad de destino</h1>
 <div class="breadcrumbs">
 <a href="../index.html">all</a> &gt; 
-<a href="../packages/default-package.html">default-package</a> &gt; Busqueda de vuelos por fecha</div>
+<a href="../packages/default-package.html">default-package</a> &gt; Busqueda de vuelos por ciudad de destino</div>
 <div id="summary">
 <table>
 <tr>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.712s</div>
+<div class="counter">0.687s</div>
 <p>duration</p>
 </div>
 </td>
@@ -81,13 +81,13 @@
 </tr>
 </thead>
 <tr>
-<td class="success">Buscar vuelos cuando no hay vuelos en el rango de fechas</td>
-<td class="success">0.302s</td>
+<td class="success">Buscar vuelos hacia una ciudad de destino existente</td>
+<td class="success">0.384s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">Buscar vuelos entre dos fechas validas</td>
-<td class="success">0.410s</td>
+<td class="success">Buscar vuelos hacia una ciudad de destino sin vuelos</td>
+<td class="success">0.303s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -96,10 +96,9 @@
 <h2>Standard output</h2>
 <span class="code">
 <pre>Request method:	GET
-Request URI:	http://localhost:8080/flights/search?startDate=2023-01-01&amp;endDate=2024-01-02
+Request URI:	http://localhost:8080/flights/searchByDestination?cityOfDestination=Miami
 Proxy:			&lt;none&gt;
-Request params:	startDate=2023-01-01
-				endDate=2024-01-02
+Request params:	cityOfDestination=Miami
 Query params:	&lt;none&gt;
 Form params:	&lt;none&gt;
 Path params:	&lt;none&gt;
@@ -120,20 +119,19 @@ Connection: keep-alive
 
 [
     {
-        &quot;id&quot;: 1,
-        &quot;airline&quot;: &quot;Airways Inc.&quot;,
-        &quot;origin&quot;: &quot;Bogota&quot;,
-        &quot;destination&quot;: &quot;Cali&quot;,
-        &quot;price&quot;: 159,
-        &quot;departureDate&quot;: &quot;2024-01-01&quot;,
-        &quot;arrivalDate&quot;: &quot;2024-01-01&quot;
+        &quot;id&quot;: 2,
+        &quot;airline&quot;: &quot;JetFly&quot;,
+        &quot;origin&quot;: &quot;Medellin&quot;,
+        &quot;destination&quot;: &quot;Miami&quot;,
+        &quot;price&quot;: 443,
+        &quot;departureDate&quot;: &quot;2024-01-02&quot;,
+        &quot;arrivalDate&quot;: &quot;2024-01-02&quot;
     }
 ]
 Request method:	GET
-Request URI:	http://localhost:8080/flights/search?startDate=2023-01-01&amp;endDate=2023-01-02
+Request URI:	http://localhost:8080/flights/searchByDestination?cityOfDestination=CiudadInexistente
 Proxy:			&lt;none&gt;
-Request params:	startDate=2023-01-01
-				endDate=2023-01-02
+Request params:	cityOfDestination=CiudadInexistente
 Query params:	&lt;none&gt;
 Form params:	&lt;none&gt;
 Path params:	&lt;none&gt;
@@ -148,7 +146,7 @@ Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Sun, 03 Nov 2024 19:34:05 GMT
+Date: Sun, 03 Nov 2024 19:34:06 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
@@ -167,7 +165,7 @@ Connection: keep-alive
    | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
    |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
 
-Buscar vuelos entre dos fechas validas(busqueda-de-vuelos-por-fecha;buscar-vuelos-entre-dos-fechas-validas)
+Buscar vuelos hacia una ciudad de destino existente(busqueda-de-vuelos-por-ciudad-de-destino;buscar-vuelos-hacia-una-ciudad-de-destino-existente)
 --------------------------------------------------------------------------------
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
@@ -175,7 +173,7 @@ Buscar vuelos entre dos fechas validas(busqueda-de-vuelos-por-fecha;buscar-vuelo
    | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
    |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
 
-Buscar vuelos entre dos fechas validas
+Buscar vuelos hacia una ciudad de destino existente
 ----------------------------------------------------------------------
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
@@ -183,7 +181,7 @@ Buscar vuelos entre dos fechas validas
    | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
    |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
 
-Buscar vuelos cuando no hay vuelos en el rango de fechas(busqueda-de-vuelos-por-fecha;buscar-vuelos-cuando-no-hay-vuelos-en-el-rango-de-fechas)
+Buscar vuelos hacia una ciudad de destino sin vuelos(busqueda-de-vuelos-por-ciudad-de-destino;buscar-vuelos-hacia-una-ciudad-de-destino-sin-vuelos)
 --------------------------------------------------------------------------------
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
@@ -191,7 +189,7 @@ Buscar vuelos cuando no hay vuelos en el rango de fechas(busqueda-de-vuelos-por-
    | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
    |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
 
-Buscar vuelos cuando no hay vuelos en el rango de fechas
+Buscar vuelos hacia una ciudad de destino sin vuelos
 ----------------------------------------------------------------------
 </pre>
 </span>

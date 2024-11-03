@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Busqueda de vuelos por fecha" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-11-03T18:21:55" hostname="ASUS_RIVERA" time="0.405">
+<testsuite name="Busqueda de vuelos por fecha" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-11-03T19:34:04" hostname="ASUS_RIVERA" time="0.712">
   <properties/>
-  <testcase name="Buscar vuelos entre dos fechas validas" classname="Busqueda de vuelos por fecha" time="0.221"/>
-  <testcase name="Buscar vuelos cuando no hay vuelos en el rango de fechas" classname="Busqueda de vuelos por fecha" time="0.184"/>
+  <testcase name="Buscar vuelos entre dos fechas validas" classname="Busqueda de vuelos por fecha" time="0.41"/>
+  <testcase name="Buscar vuelos cuando no hay vuelos en el rango de fechas" classname="Busqueda de vuelos por fecha" time="0.302"/>
   <system-out><![CDATA[Request method:	GET
 Request URI:	http://localhost:8080/flights/search?startDate=2023-01-01&endDate=2024-01-02
 Proxy:			<none>
@@ -22,7 +22,7 @@ Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Sun, 03 Nov 2024 18:21:55 GMT
+Date: Sun, 03 Nov 2024 19:34:05 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
@@ -56,7 +56,7 @@ Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Sun, 03 Nov 2024 18:21:55 GMT
+Date: Sun, 03 Nov 2024 19:34:05 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 

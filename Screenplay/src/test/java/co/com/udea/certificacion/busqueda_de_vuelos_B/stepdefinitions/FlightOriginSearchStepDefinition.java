@@ -1,4 +1,5 @@
 package co.com.udea.certificacion.busqueda_de_vuelos_B.stepdefinitions;
+
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 
 import org.hamcrest.Matchers;
@@ -12,8 +13,8 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-public class FlightOriginSearchStepDefinition {
 
+public class FlightOriginSearchStepDefinition {
 
     Actor usuario = Actor.named("usuario");
     String origin;
@@ -24,9 +25,9 @@ public class FlightOriginSearchStepDefinition {
         OnStage.theActorCalled("usuario");
     }
 
-    @Given("el usuario se conecta al servicio e ingresa la ciudad de origen Bogota")
-    public void theUserConnectsToTheServiceAndEntersOriginCityBogota() {
-        this.origin = "Bogota";
+    @Given("el usuario se conecta al servicio e ingresa la ciudad de origen {string}")
+    public void theUserConnectsToTheServiceAndEntersOriginCity(String ciudadOrigen) {
+        this.origin = ciudadOrigen;
         usuario.attemptsTo(ConnectTo.theService());
     }
 
@@ -35,25 +36,14 @@ public class FlightOriginSearchStepDefinition {
         usuario.attemptsTo(SearchFlightsByOriginTask.searchFlightsByOriginTask(origin));
     }
 
-    @Then("se muestra una lista de vuelos que salen desde Bogota")
-    public void theUserShouldSeeAListOfFlightsLeavingFromBogota() {
+    @Then("se muestra una lista de vuelos que salen desde {string}")
+    public void theUserShouldSeeAListOfFlightsLeavingFrom(String ciudadOrigen) {
         usuario.should(seeThatResponse(response -> response.statusCode(200)
-                .body("[0].origin", Matchers.equalTo(origin))));
+                .body("[0].origin", Matchers.equalTo(ciudadOrigen))));
     }
 
-    @Given("el usuario se conecta al servicio e ingresa la ciudad de origen CiudadInexistente")
-    public void theUserConnectsToTheServiceAndEntersOriginCityCiudadInexistente() {
-        this.origin = "CiudadInexistente";
-        usuario.attemptsTo(ConnectTo.theService());
-    }
-
-    @When("se realiza la busqueda de vuelos desde la ciudad inexistente especificada")
-    public void theUserSearchesForFlightsFromTheSpecifiedCityCiudadInexistente() {
-        usuario.attemptsTo(SearchFlightsByOriginTask.searchFlightsByOriginTask(origin));
-    }
-
-    @Then("no se muestran vuelos disponibles desde CiudadInexistente")
-    public void noFlightsShouldBeAvailableFromCiudadInexistente() {
+    @Then("no se muestran vuelos disponibles desde {string}")
+    public void noFlightsShouldBeAvailableFrom(String ciudadOrigen) {
         usuario.should(seeThatResponse(response -> response.statusCode(200)
                 .body("size()", Matchers.equalTo(0))));
     }

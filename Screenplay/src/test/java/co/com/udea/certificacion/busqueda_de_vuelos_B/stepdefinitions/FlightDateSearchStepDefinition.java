@@ -17,12 +17,6 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 public class FlightDateSearchStepDefinition {
     Actor usuario = Actor.named("usuario");
 
-    final String fechaInicioConVuelos = "2023-01-01";
-    final String fechaFinConVuelos = "2024-01-02";
-
-    final String fechaInicioSinVuelos = "2023-01-01";
-    final String fechaFinSinVuelos = "2023-01-02";
-
     @Before
     public void config() {
         OnStage.setTheStage(new OnlineCast());

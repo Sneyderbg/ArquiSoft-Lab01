@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Busqueda de vuelos por ciudad de origen" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-11-03T19:34:06" hostname="ASUS_RIVERA" time="0.676">
+<testsuite name="Busqueda de vuelos por ciudad de destino" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-11-03T19:34:05" hostname="ASUS_RIVERA" time="0.687">
   <properties/>
-  <testcase name="Buscar vuelos desde una ciudad de origen existente" classname="Busqueda de vuelos por ciudad de origen" time="0.391"/>
-  <testcase name="Buscar vuelos desde una ciudad de origen sin vuelos" classname="Busqueda de vuelos por ciudad de origen" time="0.285"/>
+  <testcase name="Buscar vuelos hacia una ciudad de destino existente" classname="Busqueda de vuelos por ciudad de destino" time="0.384"/>
+  <testcase name="Buscar vuelos hacia una ciudad de destino sin vuelos" classname="Busqueda de vuelos por ciudad de destino" time="0.303"/>
   <system-out><![CDATA[Request method:	GET
-Request URI:	http://localhost:8080/flights/searchByOrigin?cityOfOrigin=Bogota
+Request URI:	http://localhost:8080/flights/searchByDestination?cityOfDestination=Miami
 Proxy:			<none>
-Request params:	cityOfOrigin=Bogota
+Request params:	cityOfDestination=Miami
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
@@ -21,34 +21,25 @@ Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Sun, 03 Nov 2024 19:34:06 GMT
+Date: Sun, 03 Nov 2024 19:34:05 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
 [
     {
-        "id": 1,
-        "airline": "Airways Inc.",
-        "origin": "Bogota",
-        "destination": "Cali",
-        "price": 159,
-        "departureDate": "2024-01-01",
-        "arrivalDate": "2024-01-01"
-    },
-    {
-        "id": 4,
-        "airline": "Latam",
-        "origin": "Bogota",
-        "destination": "Cali",
-        "price": 98,
-        "departureDate": "2024-01-03",
-        "arrivalDate": "2024-01-03"
+        "id": 2,
+        "airline": "JetFly",
+        "origin": "Medellin",
+        "destination": "Miami",
+        "price": 443,
+        "departureDate": "2024-01-02",
+        "arrivalDate": "2024-01-02"
     }
 ]
 Request method:	GET
-Request URI:	http://localhost:8080/flights/searchByOrigin?cityOfOrigin=CiudadInexistente
+Request URI:	http://localhost:8080/flights/searchByDestination?cityOfDestination=CiudadInexistente
 Proxy:			<none>
-Request params:	cityOfOrigin=CiudadInexistente
+Request params:	cityOfDestination=CiudadInexistente
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
@@ -77,7 +68,7 @@ Connection: keep-alive
    | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
    |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
 
-Buscar vuelos desde una ciudad de origen existente(busqueda-de-vuelos-por-ciudad-de-origen;buscar-vuelos-desde-una-ciudad-de-origen-existente)
+Buscar vuelos hacia una ciudad de destino existente(busqueda-de-vuelos-por-ciudad-de-destino;buscar-vuelos-hacia-una-ciudad-de-destino-existente)
 --------------------------------------------------------------------------------
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
@@ -85,7 +76,7 @@ Buscar vuelos desde una ciudad de origen existente(busqueda-de-vuelos-por-ciudad
    | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
    |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
 
-Buscar vuelos desde una ciudad de origen existente
+Buscar vuelos hacia una ciudad de destino existente
 ----------------------------------------------------------------------
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
@@ -93,7 +84,7 @@ Buscar vuelos desde una ciudad de origen existente
    | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
    |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
 
-Buscar vuelos desde una ciudad de origen sin vuelos(busqueda-de-vuelos-por-ciudad-de-origen;buscar-vuelos-desde-una-ciudad-de-origen-sin-vuelos)
+Buscar vuelos hacia una ciudad de destino sin vuelos(busqueda-de-vuelos-por-ciudad-de-destino;buscar-vuelos-hacia-una-ciudad-de-destino-sin-vuelos)
 --------------------------------------------------------------------------------
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
@@ -101,7 +92,7 @@ Buscar vuelos desde una ciudad de origen sin vuelos(busqueda-de-vuelos-por-ciuda
    | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
    |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
 
-Buscar vuelos desde una ciudad de origen sin vuelos
+Buscar vuelos hacia una ciudad de destino sin vuelos
 ----------------------------------------------------------------------
 ]]></system-err>
 </testsuite>
