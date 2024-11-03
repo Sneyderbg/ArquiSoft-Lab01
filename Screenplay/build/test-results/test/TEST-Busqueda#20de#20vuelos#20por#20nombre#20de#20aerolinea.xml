@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Busqueda de vuelos por nombre de aerolinea" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-03T02:38:40" hostname="ANDRES" time="0.235">
+<testsuite name="Busqueda de vuelos por nombre de aerolinea" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-03T18:21:50" hostname="ASUS_RIVERA" time="4.317">
   <properties/>
-  <testcase name="Buscar vuelos de una aerolinea especifica" classname="Busqueda de vuelos por nombre de aerolinea" time="0.235"/>
+  <testcase name="Buscar vuelos de una aerolinea especifica" classname="Busqueda de vuelos por nombre de aerolinea" time="4.317"/>
   <system-out><![CDATA[Request method:	GET
 Request URI:	http://localhost:8080/flights/searchByName?nameAirline=JetFly
 Proxy:			<none>
@@ -20,7 +20,7 @@ Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Sun, 03 Nov 2024 02:38:39 GMT
+Date: Sun, 03 Nov 2024 18:21:53 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 

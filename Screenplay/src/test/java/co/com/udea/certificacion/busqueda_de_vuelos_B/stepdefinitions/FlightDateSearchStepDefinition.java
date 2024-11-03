@@ -6,7 +6,6 @@ import org.hamcrest.Matchers;
 
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.ConnectTo;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.SearchFlightsByDateTask;
-import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.SearchFlightsByNameTask;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,10 +15,13 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
 public class FlightDateSearchStepDefinition {
-  Actor usuario = Actor.named("usuario");
+    Actor usuario = Actor.named("usuario");
 
-    final String fechaInicio = "2023-01-01";
-    final String fechaFin = "2024-01-02";
+    final String fechaInicioConVuelos = "2023-01-01";
+    final String fechaFinConVuelos = "2024-01-02";
+
+    final String fechaInicioSinVuelos = "2023-01-01";
+    final String fechaFinSinVuelos = "2023-01-02";
 
     @Before
     public void config() {
@@ -27,19 +29,30 @@ public class FlightDateSearchStepDefinition {
         OnStage.theActorCalled("usuario");
     }
 
-    @Given("una fecha de inicio 2023-01-01 y una fecha de fin 2024-01-02")
-    public void thatTheUserWantsToSearchForAFlight() {
+    @Given("una fecha de inicio {string} y una fecha de fin {string}")
+    public void thatTheUserWantsToSearchForAFlight(String fechaInicio, String fechaFin) {
         usuario.attemptsTo(ConnectTo.theService());
+        usuario.remember("fechaInicio", fechaInicio);
+        usuario.remember("fechaFin", fechaFin);
     }
 
     @When("se realiza la busqueda de vuelos entre las fechas especificadas")
     public void heEntersTheAirline() {
+        String fechaInicio = usuario.recall("fechaInicio");
+        String fechaFin = usuario.recall("fechaFin");
         usuario.attemptsTo(SearchFlightsByDateTask.searchFlightsByDateTask(fechaInicio, fechaFin));
     }
 
     @Then("se muestra una lista de vuelos disponibles en el rango de fechas")
     public void heShouldSeeTheFlightInformation() {
-            usuario.should(seeThatResponse(response->response.statusCode(200)
-                    .body("[0].airline", Matchers.equalTo("Airways Inc."))));
+        usuario.should(seeThatResponse(response -> response.statusCode(200)
+                .body("[0].airline", Matchers.equalTo("Airways Inc."))));
+    }
+
+    @Then("no se muestran vuelos disponibles")
+    public void heShouldSeeNoAvailableFlights() {
+        usuario.should(seeThatResponse(response -> response.statusCode(200)
+                .body("size()", Matchers.equalTo(0))));
     }
 }
+

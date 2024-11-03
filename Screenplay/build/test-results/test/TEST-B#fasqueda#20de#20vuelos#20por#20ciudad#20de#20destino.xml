@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Búsqueda de vuelos por ciudad de destino" tests="2" skipped="0" failures="2" errors="0" timestamp="2024-11-03T02:38:32" hostname="ANDRES" time="0.92">
+<testsuite name="Búsqueda de vuelos por ciudad de destino" tests="2" skipped="0" failures="2" errors="0" timestamp="2024-11-03T18:21:55" hostname="ASUS_RIVERA" time="0.196">
   <properties/>
-  <testcase name="Buscar vuelos hacia una ciudad de destino existente" classname="Búsqueda de vuelos por ciudad de destino" time="0.799">
+  <testcase name="Buscar vuelos hacia una ciudad de destino existente" classname="Búsqueda de vuelos por ciudad de destino" time="0.118">
     <failure message="io.cucumber.junit.UndefinedStepException: The step 'la ciudad de destino &quot;Medellín&quot;' and 2 other step(s) are undefined.&#10;You can implement these steps using the snippet(s) below:&#10;&#10;@Given(&quot;la ciudad de destino {string}&quot;)&#10;public void laCiudadDeDestino(String string) {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;@When(&quot;se realiza la búsqueda de vuelos hacia la ciudad especificada&quot;)&#10;public void seRealizaLaBúsquedaDeVuelosHaciaLaCiudadEspecificada() {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;@Then(&quot;se muestra una lista de vuelos que llegan a {string}&quot;)&#10;public void seMuestraUnaListaDeVuelosQueLleganA(String string) {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;" type="io.cucumber.junit.UndefinedStepException">io.cucumber.junit.UndefinedStepException: The step 'la ciudad de destino &quot;Medellín&quot;' and 2 other step(s) are undefined.
 You can implement these steps using the snippet(s) below:
 
@@ -23,7 +23,7 @@ public void seMuestraUnaListaDeVuelosQueLleganA(String string) {
 
 </failure>
   </testcase>
-  <testcase name="Buscar vuelos hacia una ciudad de destino sin vuelos" classname="Búsqueda de vuelos por ciudad de destino" time="0.121">
+  <testcase name="Buscar vuelos hacia una ciudad de destino sin vuelos" classname="Búsqueda de vuelos por ciudad de destino" time="0.078">
     <failure message="io.cucumber.junit.UndefinedStepException: The step 'la ciudad de destino &quot;CiudadInexistente&quot;' and 2 other step(s) are undefined.&#10;You can implement these steps using the snippet(s) below:&#10;&#10;@Given(&quot;la ciudad de destino {string}&quot;)&#10;public void laCiudadDeDestino(String string) {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;@When(&quot;se realiza la búsqueda de vuelos hacia la ciudad especificada&quot;)&#10;public void seRealizaLaBúsquedaDeVuelosHaciaLaCiudadEspecificada() {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;@Then(&quot;no se muestran vuelos disponibles hacia {string}&quot;)&#10;public void noSeMuestranVuelosDisponiblesHacia(String string) {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;" type="io.cucumber.junit.UndefinedStepException">io.cucumber.junit.UndefinedStepException: The step 'la ciudad de destino &quot;CiudadInexistente&quot;' and 2 other step(s) are undefined.
 You can implement these steps using the snippet(s) below:
 

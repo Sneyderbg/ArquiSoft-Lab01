@@ -4,7 +4,6 @@ import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeT
 import org.hamcrest.Matchers;
 
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.ConnectTo;
-import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.SearchFlightsByNameTask;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.SearchFlightsByOriginTask;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
