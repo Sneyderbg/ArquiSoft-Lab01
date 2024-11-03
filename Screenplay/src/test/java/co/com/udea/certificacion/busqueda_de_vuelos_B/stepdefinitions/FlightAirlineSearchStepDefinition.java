@@ -17,7 +17,7 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 public class FlightAirlineSearchStepDefinition {
 
     Actor usuario = Actor.named("usuario");
-    final String airlineName = "JetFly";
+    String airlineName;
 
     @Before
     public void config() {
@@ -25,8 +25,9 @@ public class FlightAirlineSearchStepDefinition {
         OnStage.theActorCalled("usuario");
     }
 
-    @Given("el nombre de la aerolinea JetFly")
+    @Given("el usuario se conecta al servicio e ingresa el nombre de la aerolinea JetFly")
     public void thatTheUserWantsToSearchForAFlight() {
+        this.airlineName = "JetFly";
         usuario.attemptsTo(ConnectTo.theService());
     }
 

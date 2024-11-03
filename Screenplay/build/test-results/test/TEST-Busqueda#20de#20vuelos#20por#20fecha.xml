@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Busqueda de vuelos por fecha" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-03T01:39:25" hostname="ASUS_RIVERA" time="0.245">
+<testsuite name="Busqueda de vuelos por fecha" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-03T02:38:40" hostname="ANDRES" time="0.211">
   <properties/>
-  <testcase name="Buscar vuelos entre dos fechas validas" classname="Busqueda de vuelos por fecha" time="0.245"/>
+  <testcase name="Buscar vuelos entre dos fechas validas" classname="Busqueda de vuelos por fecha" time="0.211"/>
   <system-out><![CDATA[Request method:	GET
 Request URI:	http://localhost:8080/flights/search?startDate=2023-01-01&endDate=2024-01-02
 Proxy:			<none>
@@ -21,7 +21,7 @@ Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Sun, 03 Nov 2024 01:39:25 GMT
+Date: Sun, 03 Nov 2024 02:38:39 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
