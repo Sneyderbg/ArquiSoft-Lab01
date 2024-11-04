@@ -23,7 +23,7 @@ public class FlightDestinationSearch {
         OnStage.theActorCalled("usuario");
     }
 
-    @Given("la ciudad de destino {string}")
+    @Given("el usuario se conecta al servicio e ingresa la ciudad de destino {string}")
     public void thatTheUserWantsToSearchForFlightsToCity(String ciudadDestino) {
         usuario.attemptsTo(ConnectTo.theService());
         usuario.remember("ciudadDestino", ciudadDestino);

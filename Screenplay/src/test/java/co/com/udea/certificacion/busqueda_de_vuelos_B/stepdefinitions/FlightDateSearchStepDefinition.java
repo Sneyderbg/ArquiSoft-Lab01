@@ -23,7 +23,7 @@ public class FlightDateSearchStepDefinition {
         OnStage.theActorCalled("usuario");
     }
 
-    @Given("una fecha de inicio {string} y una fecha de fin {string}")
+    @Given("el usuario se conecta al servicio e ingresa una fecha de inicio {string} y una fecha de fin {string}")
     public void thatTheUserWantsToSearchForAFlight(String fechaInicio, String fechaFin) {
         usuario.attemptsTo(ConnectTo.theService());
         usuario.remember("fechaInicio", fechaInicio);
