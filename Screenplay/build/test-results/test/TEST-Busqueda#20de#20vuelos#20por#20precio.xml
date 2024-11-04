@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Busqueda de vuelos por ciudad de destino" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-11-04T00:00:51" hostname="ANDRES" time="0.578">
+<testsuite name="Busqueda de vuelos por precio" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-11-04T00:00:53" hostname="ANDRES" time="0.51">
   <properties/>
-  <testcase name="Buscar vuelos hacia una ciudad de destino existente" classname="Busqueda de vuelos por ciudad de destino" time="0.294"/>
-  <testcase name="Buscar vuelos hacia una ciudad de destino sin vuelos" classname="Busqueda de vuelos por ciudad de destino" time="0.284"/>
+  <testcase name="Buscar vuelos entre dos precios validos" classname="Busqueda de vuelos por precio" time="0.285"/>
+  <testcase name="Buscar vuelos cuando no hay vuelos en el rango de precios" classname="Busqueda de vuelos por precio" time="0.225"/>
   <system-out><![CDATA[Request method:	GET
-Request URI:	http://localhost:8080/flights/searchByDestination?cityOfDestination=Miami
+Request URI:	http://localhost:8080/flights/searchByPrice?inicialPrice=100&finalPrice=500
 Proxy:			<none>
-Request params:	cityOfDestination=Miami
+Request params:	inicialPrice=100
+				finalPrice=500
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
@@ -21,11 +22,20 @@ Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Mon, 04 Nov 2024 00:00:51 GMT
+Date: Mon, 04 Nov 2024 00:00:52 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
 [
+    {
+        "id": 1,
+        "airline": "Airways Inc.",
+        "origin": "Bogota",
+        "destination": "Cali",
+        "price": 159,
+        "departureDate": "2024-01-01",
+        "arrivalDate": "2024-01-01"
+    },
     {
         "id": 2,
         "airline": "JetFly",
@@ -34,12 +44,31 @@ Connection: keep-alive
         "price": 443,
         "departureDate": "2024-01-02",
         "arrivalDate": "2024-01-02"
+    },
+    {
+        "id": 3,
+        "airline": "Avianca",
+        "origin": "Medellin",
+        "destination": "Cartagena",
+        "price": 100,
+        "departureDate": "2024-01-02",
+        "arrivalDate": "2024-01-02"
+    },
+    {
+        "id": 6,
+        "airline": "Wingo",
+        "origin": "Medellin",
+        "destination": "Santa Marta",
+        "price": 123,
+        "departureDate": "2024-01-04",
+        "arrivalDate": "2024-01-04"
     }
 ]
 Request method:	GET
-Request URI:	http://localhost:8080/flights/searchByDestination?cityOfDestination=CiudadInexistente
+Request URI:	http://localhost:8080/flights/searchByPrice?inicialPrice=2000&finalPrice=3000
 Proxy:			<none>
-Request params:	cityOfDestination=CiudadInexistente
+Request params:	inicialPrice=2000
+				finalPrice=3000
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
@@ -54,7 +83,7 @@ Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Mon, 04 Nov 2024 00:00:51 GMT
+Date: Mon, 04 Nov 2024 00:00:52 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
@@ -68,7 +97,7 @@ Connection: keep-alive
    | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
    |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
 
-Buscar vuelos hacia una ciudad de destino existente(busqueda-de-vuelos-por-ciudad-de-destino;buscar-vuelos-hacia-una-ciudad-de-destino-existente)
+Buscar vuelos entre dos precios validos(busqueda-de-vuelos-por-precio;buscar-vuelos-entre-dos-precios-validos)
 --------------------------------------------------------------------------------
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
@@ -76,7 +105,7 @@ Buscar vuelos hacia una ciudad de destino existente(busqueda-de-vuelos-por-ciuda
    | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
    |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
 
-Buscar vuelos hacia una ciudad de destino existente
+Buscar vuelos entre dos precios validos
 ----------------------------------------------------------------------
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
@@ -84,7 +113,7 @@ Buscar vuelos hacia una ciudad de destino existente
    | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
    |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
 
-Buscar vuelos hacia una ciudad de destino sin vuelos(busqueda-de-vuelos-por-ciudad-de-destino;buscar-vuelos-hacia-una-ciudad-de-destino-sin-vuelos)
+Buscar vuelos cuando no hay vuelos en el rango de precios(busqueda-de-vuelos-por-precio;buscar-vuelos-cuando-no-hay-vuelos-en-el-rango-de-precios)
 --------------------------------------------------------------------------------
 [Test worker] INFO  - 
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
@@ -92,7 +121,7 @@ Buscar vuelos hacia una ciudad de destino sin vuelos(busqueda-de-vuelos-por-ciud
    | |   | _|  \__ \   | |     |  _/  / _ \  \__ \ \__ \ | _|  | |) |
    |_|   |___| |___/   |_|     |_|   /_/ \_\ |___/ |___/ |___| |___/ 
 
-Buscar vuelos hacia una ciudad de destino sin vuelos
+Buscar vuelos cuando no hay vuelos en el rango de precios
 ----------------------------------------------------------------------
 ]]></system-err>
 </testsuite>

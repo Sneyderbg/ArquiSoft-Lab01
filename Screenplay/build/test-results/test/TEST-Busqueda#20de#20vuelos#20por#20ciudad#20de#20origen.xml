@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Busqueda de vuelos por ciudad de origen" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-11-03T19:34:06" hostname="ASUS_RIVERA" time="0.676">
+<testsuite name="Busqueda de vuelos por ciudad de origen" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-11-04T00:00:52" hostname="ANDRES" time="0.536">
   <properties/>
-  <testcase name="Buscar vuelos desde una ciudad de origen existente" classname="Busqueda de vuelos por ciudad de origen" time="0.391"/>
-  <testcase name="Buscar vuelos desde una ciudad de origen sin vuelos" classname="Busqueda de vuelos por ciudad de origen" time="0.285"/>
+  <testcase name="Buscar vuelos desde una ciudad de origen existente" classname="Busqueda de vuelos por ciudad de origen" time="0.303"/>
+  <testcase name="Buscar vuelos desde una ciudad de origen sin vuelos" classname="Busqueda de vuelos por ciudad de origen" time="0.232"/>
   <system-out><![CDATA[Request method:	GET
 Request URI:	http://localhost:8080/flights/searchByOrigin?cityOfOrigin=Bogota
 Proxy:			<none>
@@ -21,7 +21,7 @@ Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Sun, 03 Nov 2024 19:34:06 GMT
+Date: Mon, 04 Nov 2024 00:00:52 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 
@@ -63,7 +63,7 @@ Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 Transfer-Encoding: chunked
-Date: Sun, 03 Nov 2024 19:34:06 GMT
+Date: Mon, 04 Nov 2024 00:00:52 GMT
 Keep-Alive: timeout=60
 Connection: keep-alive
 

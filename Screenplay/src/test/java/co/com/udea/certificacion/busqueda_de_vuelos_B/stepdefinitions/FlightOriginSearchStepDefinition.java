@@ -39,7 +39,7 @@ public class FlightOriginSearchStepDefinition {
     @Then("se muestra una lista de vuelos que salen desde {string}")
     public void theUserShouldSeeAListOfFlightsLeavingFrom(String ciudadOrigen) {
         usuario.should(seeThatResponse(response -> response.statusCode(200)
-                .body("[0].origin", Matchers.equalTo(ciudadOrigen))));
+                .body("origin", Matchers.everyItem(Matchers.equalTo(ciudadOrigen)))));
     }
 
     @Then("no se muestran vuelos disponibles desde {string}")

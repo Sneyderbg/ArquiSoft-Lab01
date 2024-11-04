@@ -38,7 +38,7 @@ public class FlightDestinationSearch {
     @Then("se muestra una lista de vuelos que llegan a {string}")
     public void heShouldSeeFlightsToCity(String ciudadDestino) {
         usuario.should(seeThatResponse(response -> response.statusCode(200)
-                .body("[0].destination", Matchers.equalTo(ciudadDestino))));
+                .body("destination", Matchers.everyItem(Matchers.equalTo(ciudadDestino)))));
     }
 
     @Then("no se muestran vuelos disponibles hacia {string}")

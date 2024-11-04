@@ -39,7 +39,7 @@ public class FlightAirlineSearchStepDefinition {
     @Then("se muestra una lista de vuelos de JetFly")
     public void heShouldSeeTheFlightInformation() {
             usuario.should(seeThatResponse(response->response.statusCode(200)
-                    .body("[0].airline", Matchers.equalTo(airlineName))));
+                    .body("airline", Matchers.everyItem(Matchers.equalTo(airlineName)))));
     }
 
 }

@@ -31,7 +31,7 @@ public class FlightDateSearchStepDefinition {
     }
 
     @When("se realiza la busqueda de vuelos entre las fechas especificadas")
-    public void heEntersTheAirline() {
+    public void heEntersTheDates() {
         String fechaInicio = usuario.recall("fechaInicio");
         String fechaFin = usuario.recall("fechaFin");
         usuario.attemptsTo(SearchFlightsByDateTask.searchFlightsByDateTask(fechaInicio, fechaFin));
@@ -40,7 +40,7 @@ public class FlightDateSearchStepDefinition {
     @Then("se muestra una lista de vuelos disponibles en el rango de fechas")
     public void heShouldSeeTheFlightInformation() {
         usuario.should(seeThatResponse(response -> response.statusCode(200)
-                .body("[0].airline", Matchers.equalTo("Airways Inc."))));
+                .body("airline", Matchers.everyItem(Matchers.equalTo("Airways Inc.")))));
     }
 
     @Then("no se muestran vuelos disponibles")
