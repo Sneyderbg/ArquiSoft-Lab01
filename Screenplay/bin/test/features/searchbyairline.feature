@@ -1,6 +1,6 @@
-Feature: Busqueda de vuelos por nombre de aerolinea
+Funcionalidad: Busqueda de vuelos por nombre de aerolinea
 
-  Scenario: Buscar vuelos de una aerolinea especifica
-    Given el usuario se conecta al servicio e ingresa el nombre de la aerolinea JetFly
-    When se realiza la busqueda de vuelos por nombre de aerolinea
-    Then se muestra una lista de vuelos de JetFly
+  Escenario: Buscar vuelos de una aerolínea específica
+    Dado el usuario se conecta al servicio e ingresa el nombre de la aerolínea JetFly
+    Cuando se realiza la búsqueda de vuelos por nombre de aerolínea
+    Entonces se muestra una lista de vuelos de JetFly
