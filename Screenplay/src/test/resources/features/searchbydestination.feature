@@ -1,4 +1,6 @@
-Funcionalidad: Búsqueda de vuelos por ciudad de destino
+# language: es
+
+Característica: Búsqueda de vuelos por ciudad de destino
 
   Escenario: Buscar vuelos hacia una ciudad de destino existente
     Dado el usuario se conecta al servicio e ingresa la ciudad de destino "Miami"

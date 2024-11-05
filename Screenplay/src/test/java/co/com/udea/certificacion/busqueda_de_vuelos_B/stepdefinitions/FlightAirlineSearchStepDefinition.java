@@ -17,7 +17,6 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 public class FlightAirlineSearchStepDefinition {
 
     Actor usuario = Actor.named("usuario");
-    String airlineName;
 
     @Before
     public void config() {
@@ -25,19 +24,20 @@ public class FlightAirlineSearchStepDefinition {
         OnStage.theActorCalled("usuario");
     }
 
-    @Given("el usuario se conecta al servicio e ingresa el nombre de la aerolinea JetFly")
-    public void thatTheUserWantsToSearchForAFlight() {
-        this.airlineName = "JetFly";
+    @Given("el usuario se conecta al servicio e ingresa el nombre de la aerolínea {string}")
+    public void thatTheUserWantsToSearchForAFlight(String airlineName) {
+        usuario.remember("airlineName", airlineName);
         usuario.attemptsTo(ConnectTo.theService());
     }
 
-    @When("se realiza la busqueda de vuelos por nombre de aerolinea")
+    @When("se realiza la búsqueda de vuelos por nombre de aerolínea")
     public void heEntersTheAirline() {
+        String airlineName = usuario.recall("airlineName");
         usuario.attemptsTo(SearchFlightsByNameTask.searchFlightsByNameTask(airlineName));
     }
 
-    @Then("se muestra una lista de vuelos de JetFly")
-    public void heShouldSeeTheFlightInformation() {
+    @Then("se muestra una lista de vuelos de {string}")
+    public void heShouldSeeTheFlightInformation(String airlineName) {
             usuario.should(seeThatResponse(response->response.statusCode(200)
                     .body("airline", Matchers.everyItem(Matchers.equalTo(airlineName)))));
     }

@@ -1,4 +1,6 @@
-Funcionalidad: Búsqueda de vuelos por precio
+# language: es
+
+Característica: Búsqueda de vuelos por precio
 
   Escenario: Buscar vuelos entre dos precios válidos
     Dado el usuario se conecta al servicio e ingresa un precio inicial "100" y un precio final "500"

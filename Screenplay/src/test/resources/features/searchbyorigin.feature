@@ -1,4 +1,6 @@
-Funcionalidad: Búsqueda de vuelos por ciudad de origen
+# language: es
+
+Característica: Búsqueda de vuelos por ciudad de origen
 
   Escenario: Buscar vuelos desde una ciudad de origen existente
     Dado el usuario se conecta al servicio e ingresa la ciudad de origen "Bogota"

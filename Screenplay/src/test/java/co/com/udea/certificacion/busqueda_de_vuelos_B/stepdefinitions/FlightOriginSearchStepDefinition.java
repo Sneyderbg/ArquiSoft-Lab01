@@ -31,7 +31,7 @@ public class FlightOriginSearchStepDefinition {
         usuario.attemptsTo(ConnectTo.theService());
     }
 
-    @When("se realiza la busqueda de vuelos desde la ciudad especificada")
+    @When("se realiza la búsqueda de vuelos desde la ciudad especificada")
     public void theUserSearchesForFlightsFromTheSpecifiedCity() {
         usuario.attemptsTo(SearchFlightsByOriginTask.searchFlightsByOriginTask(origin));
     }

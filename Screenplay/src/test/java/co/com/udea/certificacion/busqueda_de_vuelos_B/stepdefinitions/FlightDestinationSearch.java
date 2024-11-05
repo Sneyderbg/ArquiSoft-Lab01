@@ -29,7 +29,7 @@ public class FlightDestinationSearch {
         usuario.remember("ciudadDestino", ciudadDestino);
     }
 
-    @When("se realiza la busqueda de vuelos hacia la ciudad especificada")
+    @When("se realiza la búsqueda de vuelos hacia la ciudad especificada")
     public void heSearchesForFlightsToTheSpecifiedCity() {
         String ciudadDestino = usuario.recall("ciudadDestino");
         usuario.attemptsTo(SearchFlightsByDestinationTask.searchFlightsByDestinationTask(ciudadDestino));

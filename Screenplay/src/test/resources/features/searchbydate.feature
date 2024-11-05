@@ -1,4 +1,6 @@
-Funcionalidad: Búsqueda de vuelos por fecha
+# language: es
+
+Característica: Búsqueda de vuelos por fecha
 
   Escenario: Buscar vuelos entre dos fechas válidas
     Dado el usuario se conecta al servicio e ingresa una fecha de inicio "2023-01-01" y una fecha de fin "2024-01-02"

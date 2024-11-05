@@ -30,7 +30,7 @@ public class FlightDateSearchStepDefinition {
         usuario.remember("fechaFin", fechaFin);
     }
 
-    @When("se realiza la busqueda de vuelos entre las fechas especificadas")
+    @When("se realiza la búsqueda de vuelos entre las fechas especificadas")
     public void heEntersTheDates() {
         String fechaInicio = usuario.recall("fechaInicio");
         String fechaFin = usuario.recall("fechaFin");
