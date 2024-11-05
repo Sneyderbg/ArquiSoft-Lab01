@@ -24,13 +24,13 @@ public class FlightAirlineSearchStepDefinition {
         OnStage.theActorCalled("usuario");
     }
 
-    @Given("el usuario se conecta al servicio e ingresa el nombre de la aerolínea {string}")
+    @Given("el usuario se conecta al servicio e ingresa el nombre de la aerolinea {string}")
     public void thatTheUserWantsToSearchForAFlight(String airlineName) {
         usuario.remember("airlineName", airlineName);
         usuario.attemptsTo(ConnectTo.theService());
     }
 
-    @When("se realiza la búsqueda de vuelos por nombre de aerolínea")
+    @When("se realiza la busqueda de vuelos por nombre de aerolinea")
     public void heEntersTheAirline() {
         String airlineName = usuario.recall("airlineName");
         usuario.attemptsTo(SearchFlightsByNameTask.searchFlightsByNameTask(airlineName));

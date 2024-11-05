@@ -28,7 +28,7 @@ public class FlightPriceSearchStepDefinition {
         usuario.remember("precioFinal", precioFinal);
     }
 
-    @When("se realiza la búsqueda de vuelos entre los precios especificados")
+    @When("se realiza la busqueda de vuelos entre los precios especificados")
     public void heEntersThePrices() {
         String precioInicial = usuario.recall("precioInicial");
         String precioFinal = usuario.recall("precioFinal");
