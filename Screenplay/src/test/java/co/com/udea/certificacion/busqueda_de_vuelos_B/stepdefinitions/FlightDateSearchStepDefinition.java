@@ -7,6 +7,7 @@ import org.hamcrest.Matchers;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.ConnectTo;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.SearchFlightsByDateTask;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,9 +24,12 @@ public class FlightDateSearchStepDefinition {
         OnStage.theActorCalled("usuario");
     }
 
-    @Given("el usuario se conecta al servicio e ingresa una fecha de inicio {string} y una fecha de fin {string}")
-    public void thatTheUserWantsToSearchForAFlight(String fechaInicio, String fechaFin) {
+    @Given("el usuario se conecta al servicio")
+    public void thatTheUserConnectToTheService() {
         usuario.attemptsTo(ConnectTo.theService());
+    }
+    @And("ingresa una fecha de inicio {string} y una fecha de fin {string}")
+    public void thatTheUserWantsToSearchForAFlight(String fechaInicio, String fechaFin) {
         usuario.remember("fechaInicio", fechaInicio);
         usuario.remember("fechaFin", fechaFin);
     }

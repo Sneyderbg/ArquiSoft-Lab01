@@ -7,6 +7,7 @@ import org.hamcrest.Matchers;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.ConnectTo;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.SearchFlightsByOriginTask;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,12 +26,14 @@ public class FlightOriginSearchStepDefinition {
         OnStage.theActorCalled("usuario");
     }
 
-    @Given("el usuario se conecta al servicio e ingresa la ciudad de origen {string}")
-    public void theUserConnectsToTheServiceAndEntersOriginCity(String ciudadOrigen) {
-        this.origin = ciudadOrigen;
+    @Given("los clientes se conectan al servicio")
+    public void theUserConnectsToTheService() {
         usuario.attemptsTo(ConnectTo.theService());
     }
-
+    @And("ingresa la ciudad de origen {string}")
+    public void theUserEntersOriginCity(String ciudadOrigen) {
+        this.origin = ciudadOrigen;
+    }
     @When("se realiza la busqueda de vuelos desde la ciudad especificada")
     public void theUserSearchesForFlightsFromTheSpecifiedCity() {
         usuario.attemptsTo(SearchFlightsByOriginTask.searchFlightsByOriginTask(origin));

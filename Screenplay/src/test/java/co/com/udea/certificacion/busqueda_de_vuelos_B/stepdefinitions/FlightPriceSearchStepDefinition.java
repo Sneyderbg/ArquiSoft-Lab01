@@ -5,6 +5,7 @@ import org.hamcrest.Matchers;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.ConnectTo;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.SearchFlightsByPriceTask;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,15 +22,19 @@ public class FlightPriceSearchStepDefinition {
         OnStage.setTheStage(new OnlineCast());
         OnStage.theActorCalled("usuario");
     }
-    @Given("el usuario se conecta al servicio e ingresa un precio inicial {string} y un precio final {string}")
-    public void thatTheUserWantsToSearchForAFlight(String precioInicial, String precioFinal) {
+    @Given("los usuarios se conectan al servicio")
+    public void theUserConnectsToTheService() {
         usuario.attemptsTo(ConnectTo.theService());
+
+    }
+    @And("ingresa un precio inicial {string} y un precio final {string}")
+    public void heEntersThePrices(String precioInicial, String precioFinal) {
         usuario.remember("precioInicial", precioInicial);
         usuario.remember("precioFinal", precioFinal);
     }
 
     @When("se realiza la busqueda de vuelos entre los precios especificados")
-    public void heEntersThePrices() {
+    public void thatTheUserWantsToSearchForAFlight() {
         String precioInicial = usuario.recall("precioInicial");
         String precioFinal = usuario.recall("precioFinal");
         

@@ -7,6 +7,7 @@ import org.hamcrest.Matchers;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.ConnectTo;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.SearchFlightsByDestinationTask;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,9 +24,13 @@ public class FlightDestinationSearch {
         OnStage.theActorCalled("usuario");
     }
 
-    @Given("el usuario se conecta al servicio e ingresa la ciudad de destino {string}")
-    public void thatTheUserWantsToSearchForFlightsToCity(String ciudadDestino) {
+    @Given("el cliente se conecta al servicio")
+    public void thatTheUserWantsToConnectToTheService() {
         usuario.attemptsTo(ConnectTo.theService());
+    }
+    
+    @And("ingresa la ciudad de destino {string}")
+    public void thatTheUserWantsToSearchForFlightsToCity(String ciudadDestino) {
         usuario.remember("ciudadDestino", ciudadDestino);
     }
 

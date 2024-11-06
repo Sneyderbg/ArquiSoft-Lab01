@@ -7,6 +7,7 @@ import org.hamcrest.Matchers;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.ConnectTo;
 import co.com.udea.certificacion.busqueda_de_vuelos_B.tasks.SearchFlightsByNameTask;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,10 +25,13 @@ public class FlightAirlineSearchStepDefinition {
         OnStage.theActorCalled("usuario");
     }
 
-    @Given("el usuario se conecta al servicio e ingresa el nombre de la aerolinea {string}")
+    @Given("la usuaria se conecta al servicio")
+    public void thatTheUserConnectsToTheService() {
+        usuario.attemptsTo(ConnectTo.theService());
+    }
+    @And("ingresa el nombre de la aerolinea {string}")
     public void thatTheUserWantsToSearchForAFlight(String airlineName) {
         usuario.remember("airlineName", airlineName);
-        usuario.attemptsTo(ConnectTo.theService());
     }
 
     @When("se realiza la busqueda de vuelos por nombre de aerolinea")
@@ -35,6 +39,7 @@ public class FlightAirlineSearchStepDefinition {
         String airlineName = usuario.recall("airlineName");
         usuario.attemptsTo(SearchFlightsByNameTask.searchFlightsByNameTask(airlineName));
     }
+    
 
     @Then("se muestra una lista de vuelos de {string}")
     public void heShouldSeeTheFlightInformation(String airlineName) {
